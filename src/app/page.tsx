@@ -18,7 +18,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false); // Password show/hide state
   const [loading, setLoading] = useState(false);
 
-  const roles = [
+   const roles = [
     {
       id: "admin" as const,
       title: "Admin Workspace",
@@ -26,7 +26,7 @@ export default function LoginPage() {
       icon: "🛡️",
       iconBg: "bg-sky-50 text-sky-700 border border-sky-200",
       defaultName: "VIVEK JOSHI",
-      defaultEmail: "vivekjoshi@ad.com",
+      defaultEmail: "vivekjoshi@admin.com",
       defaultFlat: "Admin",
     },
     {
@@ -46,7 +46,7 @@ export default function LoginPage() {
       icon: "👮",
       iconBg: "bg-emerald-50 text-emerald-700 border border-emerald-200",
       defaultName: "Officer",
-      defaultEmail: "security@societyconnect.in",
+      defaultEmail: "security@society.in",
       defaultFlat: "Gate 1",
     },
   ];
