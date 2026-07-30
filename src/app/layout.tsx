@@ -3,7 +3,7 @@ import { SocietyProvider } from "../context/SocietyContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Society Connect Pro - VIVEK JOSHI Admin Portal",
+  title: "Society Connect Pro",
   description: "Society Management, Resident Dues & Gate Activity Console",
 };
 
