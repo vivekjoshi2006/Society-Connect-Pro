@@ -83,7 +83,7 @@ interface SocietyContextType {
 const SocietyContext = createContext<SocietyContextType | undefined>(undefined);
 
 export function SocietyProvider({ children }: { children: ReactNode }) {
-  const [societyName] = useState("Skyline Residency");
+  const [societyName] = useState("Vivek Joshi's Residency");
   const [activeRole, setActiveRoleState] = useState<"admin" | "resident" | "security">("admin");
   const [activeTab, setActiveTab] = useState("dashboard");
   const [user, setUser] = useState<User | null>({
