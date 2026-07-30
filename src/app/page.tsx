@@ -253,7 +253,7 @@ export default function LoginPage() {
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span>System Online</span>
           </div>
-          <span>Skyline Residency</span>
+          <span>Vivek Joshi's Residency</span>
         </div>
 
       </div>
