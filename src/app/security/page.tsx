@@ -15,7 +15,7 @@ export default function SecurityConsole() {
     name: "",
     phone: "",
     flat: "A-101",
-    purpose: "Delivery (Zomato/Swiggy/Amazon)",
+    purpose: "Delivery (Zomato/Swiggy)",
     parkingSlot: "P-02",
   });
 
@@ -56,6 +56,9 @@ export default function SecurityConsole() {
     return a.occupied ? 1 : -1;
   });
 
+  const freeParkingSlots = parkingSlots.filter((p) => !p.occupied);
+  const occupiedParkingSlots = parkingSlots.filter((p) => p.occupied);
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gradient-to-br from-sky-50 via-blue-50/60 to-teal-50/80 font-sans text-sky-950 antialiased">
       <Sidebar />
@@ -68,7 +71,7 @@ export default function SecurityConsole() {
           {/* Header */}
           <div className="relative bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 rounded-3xl p-6 sm:p-8 text-white shadow-xl shadow-sky-500/15 overflow-hidden border border-sky-300/30">
             <div className="absolute -right-10 -bottom-10 w-60 h-60 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
-            
+
             <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-xs font-semibold text-white">
@@ -78,7 +81,7 @@ export default function SecurityConsole() {
                 <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
                   Visitor Gate Console
                 </h1>
-                <p className="text-xs sm:text-sm text-sky-100 font-medium">
+                <p className="text-[15px] sm:text-sm text-sky-100 font-medium">
                   Real-time visitor check-in, departure logs, and dynamic parking slot directory.
                 </p>
               </div>
@@ -96,7 +99,7 @@ export default function SecurityConsole() {
           {/* Gate Activity Section */}
           {(activeTab === "dashboard" || activeTab === "gate") && (
             <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-sky-100 space-y-6">
-              
+
               {/* Activity Section Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sky-100 pb-5">
                 <div className="flex items-center space-x-3">
@@ -108,7 +111,7 @@ export default function SecurityConsole() {
                     <h2 className="font-extrabold text-sky-950 text-base sm:text-lg tracking-tight">
                       Live Gate Activity Stream & Visitor Logs
                     </h2>
-                    <p className="text-xs text-sky-600 font-medium">
+                    <p className="text-[15px] text-sky-600 font-medium">
                       Real-time gate check-ins, departure times, and audit trail
                     </p>
                   </div>
@@ -126,8 +129,7 @@ export default function SecurityConsole() {
                     key={visitor.id}
                     className="bg-sky-50/40 hover:bg-white p-5 rounded-3xl border border-sky-100/90 hover:border-sky-300 hover:shadow-md transition-all duration-200 space-y-4"
                   >
-                    {/* Avatar, Visitor Main Info, Status, Actions */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-sky-100">           
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-sky-100">
                       <div className="flex items-center space-x-3.5">
                         <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-600 to-teal-500 text-white flex items-center justify-center font-black text-xl shrink-0 shadow-md shadow-sky-500/20">
                           {visitor.name.charAt(0)}
@@ -137,11 +139,10 @@ export default function SecurityConsole() {
                           <div className="flex items-center gap-2 flex-wrap">
                             <h3 className="font-extrabold text-base text-sky-950">{visitor.name}</h3>
                             <span
-                              className={`text-[11px] font-extrabold px-3 py-0.5 rounded-full border ${
-                                visitor.status === "IN"
+                              className={`text-[13px] font-extrabold px-3 py-0.5 rounded-full border ${visitor.status === "IN"
                                   ? "bg-emerald-50 text-emerald-700 border-emerald-200"
                                   : "bg-sky-100/70 text-sky-700 border-sky-200"
-                              }`}
+                                }`}
                             >
                               ● {visitor.status === "IN" ? "INSIDE PREMISES" : "DEPARTED"}
                             </span>
@@ -190,28 +191,23 @@ export default function SecurityConsole() {
                       </div>
                     </div>
 
-                    {/* Organized Grid of Visit Metadata */}
+                    {/* Metadata Grid */}
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                      
-                      {/* Target Unit */}
                       <div className="bg-white p-3 rounded-2xl border border-sky-100/80">
                         <span className="text-[13px] font-extrabold text-sky-400 uppercase tracking-wider block">Target Unit</span>
                         <span className="font-black text-sky-950 text-sm mt-0.5 block">{visitor.flat}</span>
                       </div>
 
-                      {/* Purpose */}
                       <div className="bg-white p-3 rounded-2xl border border-sky-100/80">
                         <span className="text-[13px] font-extrabold text-sky-400 uppercase tracking-wider block">Purpose</span>
-                        <span className="font-bold text-sky-900 truncate mt-0.5 block">{visitor.purpose}</span>
+                        <span className="text-[13px] font-bold text-sky-900 truncate mt-0.5 block">{visitor.purpose}</span>
                       </div>
 
-                      {/* Parking Slot */}
                       <div className="bg-white p-3 rounded-2xl border border-sky-100/80">
                         <span className="text-[13px] font-extrabold text-sky-400 uppercase tracking-wider block">Parking Slot</span>
-                        <span className="font-mono font-black text-teal-700 mt-0.5 block">{visitor.parkingSlot}</span>
+                        <span className="text-[15px] font-mono font-black text-teal-700 mt-0.5 block">{visitor.parkingSlot}</span>
                       </div>
 
-                      {/* Entry & Exit Timeline */}
                       <div className="bg-white p-3 rounded-2xl border border-sky-100/80">
                         <span className="text-[13px] font-extrabold text-sky-400 uppercase tracking-wider block">Timeline</span>
                         <div className="text-[13px] font-bold mt-0.5 flex flex-wrap gap-x-2">
@@ -219,17 +215,83 @@ export default function SecurityConsole() {
                           <span className="text-amber-700">Out: {visitor.checkOutTime || "Inside"}</span>
                         </div>
                       </div>
-
                     </div>
 
-                    {/* Audit Log Note */}
                     {visitor.lastUpdateLog && (
                       <div className="text-[13px] font-semibold text-amber-900 bg-amber-50/80 border border-amber-200/80 px-3.5 py-1.5 rounded-xl flex items-center justify-between">
                         <span>✏️ <strong>Log Note:</strong> {visitor.lastUpdateLog}</span>
-                        <span className="font-mono text-amber-700">{visitor.lastUpdated}</span>
+                        <span className="text-sm font-mono text-amber-700">{visitor.lastUpdated}</span>
                       </div>
                     )}
+                  </div>
+                ))}
+              </div>
 
+            </div>
+          )}
+
+          {/* PARKING SLOTS DIRECTORY & GRID*/}
+          {(activeTab === "dashboard" || activeTab === "parking") && (
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-sky-100 space-y-6">
+
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sky-100 pb-5">
+                <div>
+                  <h2 className="font-extrabold text-sky-950 text-base sm:text-lg tracking-tight">
+                    Parking Slot Directory & Allocation
+                  </h2>
+                  <p className="text-[15px] text-sky-600 font-medium">
+                    Live occupancy grid for resident and visitor parking slots
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-black bg-emerald-50 text-emerald-700 px-3.5 py-1.5 rounded-full border border-emerald-200/80">
+                    ✓ {freeParkingSlots.length} Slots Available
+                  </span>
+                  <span className="text-xs font-black bg-rose-50 text-rose-700 px-3.5 py-1.5 rounded-full border border-rose-200/80">
+                    ⚠ {occupiedParkingSlots.length} Slots Occupied
+                  </span>
+                </div>
+              </div>
+
+              {/* Parking Cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                {parkingSlots.map((slot) => (
+                  <div
+                    key={slot.id}
+                    className={`p-4 rounded-2xl border transition-all duration-200 flex flex-col justify-between space-y-3 ${slot.occupied
+                        ? "bg-rose-50/40 border-rose-200/90 text-rose-950"
+                        : "bg-emerald-50/40 border-emerald-200/90 text-emerald-950"
+                      }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono font-black text-[15px]">{slot.id}</span>
+                      <span
+                        className={`w-2.5 h-2.5 rounded-full ${slot.occupied ? "bg-rose-500 animate-pulse" : "bg-emerald-500"
+                          }`}
+                      ></span>
+                    </div>
+
+                    <div>
+                      <span className="text-[13px] font-extrabold uppercase tracking-wider block text-sky-600">
+                        Status
+                      </span>
+                      <span
+                        className={`text-sm font-black ${slot.occupied ? "text-rose-700" : "text-emerald-700"
+                          }`}
+                      >
+                        {slot.occupied ? "Occupied" : "Free Slot"}
+                      </span>
+                    </div>
+
+                    <div className="pt-2 border-t border-sky-100/80 text-[11px]">
+                      <span className="text-sky-500 block text-[13px] uppercase font-extrabold">
+                        Assigned To
+                      </span>
+                      <span className="text-sky-950 text-[13px] font-bold truncate block">
+                        {slot.assignedTo || "Available"}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -242,7 +304,7 @@ export default function SecurityConsole() {
             <div className="space-y-6">
               <div className="bg-white p-6 sm:p-8 rounded-3xl border border-sky-100 shadow-sm space-y-4">
                 <h3 className="font-extrabold text-sky-950 text-base flex items-center gap-2">
-                  <span>🚨</span> <span>Emergency Hotline & Direct Desk (India)</span>
+                  <span>🚨</span> <span>Emergency Hotline & Direct Desk</span>
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
@@ -302,15 +364,15 @@ export default function SecurityConsole() {
         </main>
       </div>
 
-      {/* New Visitor Check-In */}
+      {/* New Visitor Check-In Modal */}
       {showVisitorModal && (
         <div className="fixed inset-0 bg-sky-950/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
           <div className="bg-white p-6 sm:p-8 rounded-3xl max-w-md w-full shadow-2xl space-y-5 border border-sky-100 animate-in fade-in zoom-in-95 duration-150">
-            
+
             <div className="flex justify-between items-center border-b border-sky-100 pb-3">
               <h3 className="text-base font-extrabold text-sky-950">New Gate Visitor Check-In</h3>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={() => setShowVisitorModal(false)}
                 className="text-sky-400 hover:text-sky-950 font-bold text-sm p-1"
               >
@@ -359,7 +421,7 @@ export default function SecurityConsole() {
                   onChange={(e: any) => setVisitorForm({ ...visitorForm, purpose: e.target.value })}
                   className="w-full bg-sky-50/50 border border-sky-200 p-3 rounded-2xl text-xs font-semibold text-sky-950 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
                 >
-                  <option value="Delivery (Zomato/Swiggy/Amazon)">Delivery (Zomato/Swiggy/Amazon)</option>
+                  <option value="Delivery (Zomato/Swiggy)">Delivery (Zomato/Swiggy)</option>
                   <option value="Guest / Relative">Guest / Relative</option>
                   <option value="Cab (Uber/Ola)">Cab (Uber/Ola)</option>
                   <option value="Maintenance / Electrician">Maintenance / Electrician</option>
@@ -402,15 +464,15 @@ export default function SecurityConsole() {
               </div>
 
               <div className="flex justify-end gap-2 pt-3">
-                <button 
-                  type="button" 
-                  onClick={() => setShowVisitorModal(false)} 
+                <button
+                  type="button"
+                  onClick={() => setShowVisitorModal(false)}
                   className="px-5 py-2.5 text-xs font-bold text-sky-700 hover:text-sky-950 transition"
                 >
                   Cancel
                 </button>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-2xl shadow-md shadow-emerald-600/20 transition"
                 >
                   Confirm Entry
@@ -421,15 +483,15 @@ export default function SecurityConsole() {
         </div>
       )}
 
-      {/* Edit Visitor */}
+      {/* Edit Visitor Log Modal */}
       {editingVisitor && (
         <div className="fixed inset-0 bg-sky-950/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
           <div className="bg-white p-6 sm:p-8 rounded-3xl max-w-md w-full shadow-2xl space-y-5 border border-sky-100 animate-in fade-in zoom-in-95 duration-150">
-            
+
             <div className="flex justify-between items-center border-b border-sky-100 pb-3">
               <h3 className="text-base font-extrabold text-sky-950">Edit Visitor Entry Log</h3>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={() => setEditingVisitor(null)}
                 className="text-sky-400 hover:text-sky-950 font-bold text-sm p-1"
               >
@@ -477,7 +539,7 @@ export default function SecurityConsole() {
                   onChange={(e: any) => setEditingVisitor({ ...editingVisitor, purpose: e.target.value })}
                   className="w-full bg-sky-50/50 border border-sky-200 p-3 rounded-2xl text-xs font-semibold text-sky-950 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
                 >
-                  <option value="Delivery (Zomato/Swiggy/Amazon)">Delivery (Zomato/Swiggy/Amazon)</option>
+                  <option value="Delivery (Zomato/Swiggy)">Delivery (Zomato/Swiggy)</option>
                   <option value="Guest / Relative">Guest / Relative</option>
                   <option value="Cab (Uber/Ola)">Cab (Uber/Ola)</option>
                   <option value="Maintenance / Electrician">Maintenance / Electrician</option>
@@ -512,7 +574,7 @@ export default function SecurityConsole() {
                         value={p.id}
                         disabled={p.occupied && p.id !== editingVisitor.parkingSlot}
                       >
-                        {p.id} {p.occupied && p.id !== editingVisitor.parkingSlot ? `(Occupied)` : "(Available ✓)"}
+                        {p.id} {p.occupied && p.id !== editingVisitor.parkingSlot ? `(Occupied)` : "(Available)"}
                       </option>
                     ))}
                   </select>
@@ -520,15 +582,15 @@ export default function SecurityConsole() {
               </div>
 
               <div className="flex justify-end gap-2 pt-3">
-                <button 
-                  type="button" 
-                  onClick={() => setEditingVisitor(null)} 
+                <button
+                  type="button"
+                  onClick={() => setEditingVisitor(null)}
                   className="px-5 py-2.5 bg-sky-100 hover:bg-sky-200 text-sky-800 text-xs font-bold rounded-2xl transition"
                 >
                   Cancel
                 </button>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-2xl shadow-md shadow-emerald-600/20 transition"
                 >
                   Update Log
