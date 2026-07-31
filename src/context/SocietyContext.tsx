@@ -157,7 +157,7 @@ export function SocietyProvider({ children }: { children: ReactNode }) {
   ]);
 
   const [visitors, setVisitors] = useState<Visitor[]>([
-    { id: 1, name: "Ramesh Kumar", phone: "+91 98200 12345", flat: "A-101", purpose: "Delivery (Zomato/Swiggy/Amazon)", entryTime: "10:30 AM", status: "IN", parkingSlot: "P-04", lastUpdated: "29 Jul 2026, 08:00 PM", lastUpdateLog: "Check-in logged" },
+    { id: 1, name: "Ramesh Kumar", phone: "+91 98200 12345", flat: "A-101", purpose: "Delivery (Zomato/Swiggy)", entryTime: "10:30 AM", status: "IN", parkingSlot: "P-04", lastUpdated: "29 Jul 2026, 08:00 PM", lastUpdateLog: "Check-in logged" },
     { id: 2, name: "Ananya Deshmukh", phone: "+91 98200 54321", flat: "B-201", purpose: "Guest / Relative", entryTime: "11:15 AM", checkOutTime: "12:30 PM", status: "OUT", parkingSlot: "P-05", lastUpdated: "29 Jul 2026, 12:30 PM", lastUpdateLog: "Departed premises" },
   ]);
 
