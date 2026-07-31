@@ -18,7 +18,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false); // Password show/hide state
   const [loading, setLoading] = useState(false);
 
-   const roles = [
+  const roles = [
     {
       id: "admin" as const,
       title: "Admin Workspace",
