@@ -259,7 +259,7 @@ export default function Sidebar() {
               <span>112</span>
             </div>
           ) : (
-            <div className="text-xs text-sky-700 font-bold">
+            <div className="text-sm text-sky-700 font-bold">
               Unit: <span className="font-black text-sky-900">{user?.flat || "Admin"}</span> • {user?.name || "User"}
             </div>
           )}
