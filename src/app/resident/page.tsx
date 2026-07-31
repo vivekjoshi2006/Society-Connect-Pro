@@ -151,17 +151,17 @@ export default function ResidentDashboard() {
 
                   <div className="bg-sky-50/50 p-4 rounded-2xl border border-sky-100 transition hover:border-sky-200">
                     <span className="text-[13px] font-extrabold text-sky-500 uppercase tracking-wider">Contact Number</span>
-                    <div className="text-xs font-mono font-bold text-sky-900 mt-1.5">{flatRecord.phone}</div>
+                    <div className="text-sm font-mono font-bold text-sky-900 mt-1.5">{flatRecord.phone}</div>
                   </div>
 
                   <div className="bg-sky-50/50 p-4 rounded-2xl border border-sky-100 transition hover:border-sky-200">
                     <span className="text-[13px] font-extrabold text-sky-500 uppercase tracking-wider">Registered Email</span>
-                    <div className="text-xs font-bold text-sky-900 mt-1.5 truncate">{user?.email || "vivekjoshi@ad.com"}</div>
+                    <div className="text-sm font-bold text-sky-900 mt-1.5 truncate">{user?.email || "vivekjoshi@ad.com"}</div>
                   </div>
 
                   <div className="bg-sky-50/50 p-4 rounded-2xl border border-sky-100 transition hover:border-sky-200">
                     <span className="text-[13px] font-extrabold text-sky-500 uppercase tracking-wider">Society Unique ID</span>
-                    <div className="text-xs font-mono font-bold text-sky-700 mt-1.5">RES-2026-901</div>
+                    <div className="text-sm font-mono font-bold text-sky-700 mt-1.5">RES-2026-901</div>
                   </div>
                 </div>
 
@@ -169,7 +169,7 @@ export default function ResidentDashboard() {
                 <div className="p-5 bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 text-white rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md shadow-sky-500/15">
                   <div className="space-y-0.5">
                     <div className="font-extrabold text-base text-white">Active Society Dues Summary</div>
-                    <div className="text-sky-100 text-xs font-medium">Pending Statements for Unit {activeFlat}</div>
+                    <div className="text-sky-100 text-sm font-medium">Pending Statements for Unit {activeFlat}</div>
                   </div>
                   <div className="text-left sm:text-right">
                     <div className="text-2xl font-black text-white tracking-tight bg-white/20 px-4 py-1.5 rounded-2xl backdrop-blur-sm border border-white/30">
@@ -179,13 +179,13 @@ export default function ResidentDashboard() {
                 </div>
               </div>
 
-              {/* Enhanced Helpdesk Directory (No empty gaps) */}
+              {/* Helpdesk Directory */}
               <div className="bg-white p-6 rounded-3xl border border-sky-100 shadow-sm flex flex-col justify-between space-y-5">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-sky-100 pb-3">
                     <div>
                       <h3 className="font-extrabold text-sky-950 text-base">Helpdesk Directory</h3>
-                      <p className="text-[12px] text-sky-500 font-medium">Essential society emergency contacts</p>
+                      <p className="text-[13px] text-sky-500 font-medium">Essential emergency contacts</p>
                     </div>
                     <span className="text-[12px] font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full uppercase">
                       ● Live 24/7
@@ -196,12 +196,12 @@ export default function ResidentDashboard() {
                     {/* Contact 1 */}
                     <div className="p-3 bg-sky-50/60 rounded-2xl border border-sky-100/80 hover:bg-sky-50 transition flex items-center justify-between">
                       <div>
-                        <div className="text-xs font-bold text-sky-950">Maintenance Office (VIVEK JOSHI)</div>
-                        <div className="text-sky-700 font-mono text-xs font-bold mt-0.5 flex items-center gap-1.5">
+                        <div className="text-sm font-bold text-sky-950">Admin Office (VIVEK JOSHI)</div>
+                        <div className="text-sky-700 font-mono text-sm font-bold mt-0.5 flex items-center gap-1.5">
                           <span>📞</span> 1234567890
                         </div>
                       </div>
-                      <a href="tel:1234567890" className="bg-sky-600 hover:bg-sky-700 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition">
+                      <a href="tel:1234567890" className="bg-sky-600 hover:bg-sky-700 text-white px-3 py-1.5 rounded-xl text-sm font-bold transition">
                         Call
                       </a>
                     </div>
@@ -209,8 +209,8 @@ export default function ResidentDashboard() {
                     {/* Contact 2 */}
                     <div className="p-3 bg-sky-50/60 rounded-2xl border border-sky-100/80 hover:bg-sky-50 transition flex items-center justify-between">
                       <div>
-                        <div className="text-xs font-bold text-sky-950">Main Gate Security Desk</div>
-                        <div className="text-sky-700 font-mono text-xs font-bold mt-0.5 flex items-center gap-1.5">
+                        <div className="text-sm font-bold text-sky-950">Main Gate Security Desk</div>
+                        <div className="text-sky-700 font-mono text-sm font-bold mt-0.5 flex items-center gap-1.5">
                           <span>🛡️</span> 1234567890
                         </div>
                       </div>
@@ -222,8 +222,8 @@ export default function ResidentDashboard() {
                     {/* Contact 3 */}
                     <div className="p-3 bg-sky-50/60 rounded-2xl border border-sky-100/80 hover:bg-sky-50 transition flex items-center justify-between">
                       <div>
-                        <div className="text-xs font-bold text-sky-950">Clubhouse & Amenities Admin</div>
-                        <div className="text-sky-700 font-mono text-xs font-bold mt-0.5 flex items-center gap-1.5">
+                        <div className="text-sm font-bold text-sky-950">Clubhouse & Amenities Admin</div>
+                        <div className="text-sky-700 font-mono text-sm font-bold mt-0.5 flex items-center gap-1.5">
                           <span>🏊</span> 1234567890
                         </div>
                       </div>
@@ -235,8 +235,8 @@ export default function ResidentDashboard() {
                     {/* Contact 4 */}
                     <div className="p-3 bg-sky-50/60 rounded-2xl border border-sky-100/80 hover:bg-sky-50 transition flex items-center justify-between">
                       <div>
-                        <div className="text-xs font-bold text-sky-950">Electrician & Plumber Desk</div>
-                        <div className="text-sky-700 font-mono text-xs font-bold mt-0.5 flex items-center gap-1.5">
+                        <div className="text-sm font-bold text-sky-950">Electrician & Plumber Desk</div>
+                        <div className="text-sky-700 font-mono text-sm font-bold mt-0.5 flex items-center gap-1.5">
                           <span>🔧</span> 1234567890
                         </div>
                       </div>
@@ -248,10 +248,10 @@ export default function ResidentDashboard() {
                 </div>
 
                 <div className="p-4 bg-gradient-to-r from-sky-50 to-teal-50 rounded-2xl border border-sky-200/70 text-xs text-sky-950 space-y-1">
-                  <div className="font-extrabold flex items-center gap-1.5 text-sky-900">
+                  <div className="text-sm font-extrabold flex items-center gap-1.5 text-sky-900">
                     <span>✨ Live Digital Sync</span>
                   </div>
-                  <p className="text-sky-700 text-[12px] font-medium leading-relaxed">
+                  <p className="text-sky-700 text-[13px] font-medium leading-relaxed">
                     Pay online via UPI or Card for instant official payment receipts with QR verification.
                   </p>
                 </div>
@@ -266,7 +266,7 @@ export default function ResidentDashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-extrabold text-sky-950 text-lg tracking-tight">Maintenance Statements</h3>
-                  <p className="text-xs text-sky-600 font-medium">Monthly billing breakdown for Unit {activeFlat}</p>
+                  <p className="text-sm text-sky-600 font-medium">Monthly billing breakdown for Unit {activeFlat}</p>
                 </div>
                 <span className="text-sm font-bold text-sky-700 bg-sky-100/80 px-3 py-1 rounded-full border border-sky-200">
                   {myBills.length} Records
@@ -299,11 +299,11 @@ export default function ResidentDashboard() {
                         </div>
 
                         <div className="space-y-1.5 pt-2 border-t border-sky-100 text-xs">
-                          <div className="flex justify-between text-sky-600">
+                          <div className="text-sm flex justify-between text-sky-600">
                             <span>Invoice Ref:</span>
                             <span className="font-mono font-bold text-sky-900">{bill.id}</span>
                           </div>
-                          <div className="flex justify-between text-sky-600">
+                          <div className="text-sm flex justify-between text-sky-600">
                             <span>Due Date:</span>
                             <span className="font-semibold text-sky-900">{bill.dueDate}</span>
                           </div>
@@ -314,14 +314,14 @@ export default function ResidentDashboard() {
                         {bill.status === "Unpaid" ? (
                           <button
                             onClick={() => setPayingBill(bill)}
-                            className="w-full bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-700 hover:to-emerald-700 text-white py-3 rounded-2xl text-xs font-bold transition-all duration-200 shadow-md shadow-sky-600/20 active:scale-[0.99]"
+                            className="w-full bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-700 hover:to-emerald-700 text-white py-3 rounded-2xl text-sm font-bold transition-all duration-200 shadow-md shadow-sky-600/20 active:scale-[0.99]"
                           >
                             Pay Maintenance Bill
                           </button>
                         ) : (
                           <button
                             onClick={() => setSelectedReceipt(bill)}
-                            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-2xl text-xs font-bold transition-all duration-200 flex items-center justify-center space-x-2 shadow-md shadow-emerald-600/20 active:scale-[0.99]"
+                            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-2xl text-sm font-bold transition-all duration-200 flex items-center justify-center space-x-2 shadow-md shadow-emerald-600/20 active:scale-[0.99]"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                             <span>Download Receipt</span>
