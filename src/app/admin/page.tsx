@@ -213,23 +213,23 @@ export default function AdminDashboard() {
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <h1 className="text-xl sm:text-2xl font-black text-sky-950 tracking-tight">Admin Control Center</h1>
               </div>
-              <p className="text-xs text-sky-600 font-semibold flex items-center space-x-1">
+              <p className="text-sm text-sky-600 font-semibold flex items-center space-x-1">
                 <span>Logged Admin:</span>
-                <span className="font-bold text-sky-900 bg-sky-50 border border-sky-200/80 px-2.5 py-0.5 rounded-md">VIVEK JOSHI</span>
+                <span className="text-sm font-bold text-sky-900 bg-sky-50 border border-sky-200/80 px-2.5 py-0.5 rounded-md">VIVEK JOSHI</span>
                 <span>• Flat Directory & Billing Manager</span>
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={() => setShowAddFlatModal(true)}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-2xl font-bold text-xs shadow-md shadow-emerald-600/20 transition-all flex items-center space-x-2 active:scale-95"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-2xl font-bold text-sm shadow-md shadow-emerald-600/20 transition-all flex items-center space-x-2 active:scale-95"
               >
                 <span>🏢</span> <span>Add New Flat</span>
               </button>
 
               <button
                 onClick={() => setShowBillModal(true)}
-                className="bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-700 hover:to-emerald-700 text-white px-4 py-2.5 rounded-2xl font-bold text-xs shadow-md shadow-sky-600/20 transition-all flex items-center space-x-2 active:scale-95"
+                className="bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-700 hover:to-emerald-700 text-white px-4 py-2.5 rounded-2xl font-bold text-sm shadow-md shadow-sky-600/20 transition-all flex items-center space-x-2 active:scale-95"
               >
                 <span>➕</span> <span>Generate Monthly Bill</span>
               </button>
@@ -247,11 +247,11 @@ export default function AdminDashboard() {
               }`}
             >
               <div className="flex justify-between items-start">
-                <div className="text-sky-600 text-xs font-black uppercase tracking-wider">Total Society Flats</div>
+                <div className="text-sky-600 text-sm font-black uppercase tracking-wider">Total Society Flats</div>
                 <div className="p-2 bg-sky-100 text-sky-700 rounded-2xl text-base">🏢</div>
               </div>
               <div className="text-3xl font-black text-sky-950 mt-2">{flats.length}</div>
-              <div className="text-xs text-emerald-600 font-bold mt-2 flex items-center space-x-1">
+              <div className="text-sm text-emerald-600 font-bold mt-2 flex items-center space-x-1">
                 <span>✓</span> <span>100% Units Tracked</span>
               </div>
             </div>
@@ -265,13 +265,13 @@ export default function AdminDashboard() {
               }`}
             >
               <div className="flex justify-between items-start">
-                <div className="text-sky-600 text-xs font-black uppercase tracking-wider">Unpaid Monthly Dues</div>
+                <div className="text-sky-600 text-sm font-black uppercase tracking-wider">Unpaid Monthly Dues</div>
                 <div className="p-2 bg-rose-100 text-rose-700 rounded-2xl text-base">💰</div>
               </div>
               <div className="text-3xl font-black text-rose-600 mt-2">
                 ₹{totalUnpaidDues.toLocaleString("en-IN")}
               </div>
-              <div className="text-xs text-rose-500 font-bold mt-2 flex items-center space-x-1">
+              <div className="text-sm text-rose-500 font-bold mt-2 flex items-center space-x-1">
                 <span>⚠️</span> <span>{flats.filter((f) => f.balance > 0).length} Units Pending Payment</span>
               </div>
             </div>
@@ -285,13 +285,13 @@ export default function AdminDashboard() {
               }`}
             >
               <div className="flex justify-between items-start">
-                <div className="text-sky-600 text-xs font-black uppercase tracking-wider">Active Gate Visitors</div>
+                <div className="text-sky-600 text-sm font-black uppercase tracking-wider">Active Gate Visitors</div>
                 <div className="p-2 bg-teal-100 text-teal-700 rounded-2xl text-base">🛂</div>
               </div>
               <div className="text-3xl font-black text-teal-700 mt-2">
                 {visitors.filter((v) => v.status === "IN").length}
               </div>
-              <div className="text-xs text-sky-600 font-bold mt-2 flex items-center space-x-1">
+              <div className="text-sm text-sky-600 font-bold mt-2 flex items-center space-x-1">
                 <span className="inline-block w-2 h-2 rounded-full bg-teal-500 animate-ping"></span>
                 <span>Gate Console Sync Active</span>
               </div>
@@ -299,13 +299,13 @@ export default function AdminDashboard() {
 
             <div className="bg-white p-5 rounded-3xl border border-sky-100 shadow-sm">
               <div className="flex justify-between items-start">
-                <div className="text-sky-600 text-xs font-black uppercase tracking-wider">Occupancy Status</div>
+                <div className="text-sky-600 text-sm font-black uppercase tracking-wider">Occupancy Status</div>
                 <div className="p-2 bg-emerald-100 text-emerald-700 rounded-2xl text-base">🔑</div>
               </div>
               <div className="text-3xl font-black text-emerald-600 mt-2">
                 {flats.filter((f) => f.status !== "Vacant").length} / {flats.length}
               </div>
-              <div className="text-xs text-emerald-600 font-bold mt-2">Units Occupied</div>
+              <div className="text-sm text-emerald-600 font-bold mt-2">Units Occupied</div>
             </div>
           </div>
 
@@ -315,9 +315,9 @@ export default function AdminDashboard() {
               <div className="p-6 border-b border-sky-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                 <div>
                   <h3 className="font-extrabold text-sky-950 text-base">Society Flat Records Directory</h3>
-                  <p className="text-xs text-sky-600 font-medium">Add, edit, or delete resident records with precise edit history.</p>
+                  <p className="text-sm text-sky-600 font-medium">Add, edit, or delete resident records with precise edit history.</p>
                 </div>
-                <span className="text-xs font-bold text-sky-700 bg-sky-50 border border-sky-200 px-3 py-1 rounded-full">
+                <span className="text-sm font-bold text-sky-700 bg-sky-50 border border-sky-200 px-3 py-1 rounded-full">
                   {flats.length} Flats Registered
                 </span>
               </div>
@@ -344,8 +344,8 @@ export default function AdminDashboard() {
                             Wing {flat.wing}
                           </span>
                         </td>
-                        <td className="p-4 font-bold text-sky-950">{flat.owner}</td>
-                        <td className="p-4 font-mono font-bold text-sky-700">{flat.phone}</td>
+                        <td className="text-sm p-4 font-bold text-sky-950">{flat.owner}</td>
+                        <td className="text-sm p-4 font-mono font-bold text-sky-700">{flat.phone}</td>
                         <td className="p-4">
                           <span
                             className={`px-3 py-1 rounded-full text-xs font-bold inline-flex items-center gap-1.5 ${
@@ -363,13 +363,13 @@ export default function AdminDashboard() {
                           </span>
                         </td>
                         <td className="p-4">
-                          <div className="text-sky-950 font-semibold">{flat.lastUpdateLog || "Record active"}</div>
-                          <div className="text-sky-500 font-mono text-[11px] mt-0.5">{flat.lastUpdated || "N/A"}</div>
+                          <div className="text-sm text-sky-950 font-semibold">{flat.lastUpdateLog || "Record active"}</div>
+                          <div className="text-sky-500 font-mono text-[15px] mt-0.5">{flat.lastUpdated || "N/A"}</div>
                         </td>
                         <td className="p-4 pr-6 text-right space-x-2">
                           <button
                             onClick={() => setEditingFlat(flat)}
-                            className="text-xs font-bold text-sky-700 hover:text-sky-950 bg-sky-50 hover:bg-sky-100 px-3 py-1.5 rounded-xl border border-sky-200 transition-all"
+                            className="text-[13px] font-bold text-sky-700 hover:text-sky-950 bg-sky-50 hover:bg-sky-100 px-3 py-1.5 rounded-xl border border-sky-200 transition-all"
                           >
                             Edit Flat
                           </button>
@@ -379,7 +379,7 @@ export default function AdminDashboard() {
                                 deleteFlat(flat.id);
                               }
                             }}
-                            className="text-xs font-bold text-rose-600 hover:text-rose-800 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-xl border border-rose-200 transition-all"
+                            className="text-[13px] font-bold text-rose-600 hover:text-rose-800 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-xl border border-rose-200 transition-all"
                           >
                             Delete
                           </button>
@@ -399,9 +399,9 @@ export default function AdminDashboard() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-sky-100 pb-4 gap-2">
                   <div>
                     <h3 className="font-extrabold text-sky-950 text-base">Resident Maintenance Dues & Payment Ledger</h3>
-                    <p className="text-xs text-sky-600 font-medium">Track total amount payable, paid amount, pending dues balance, and unpaid months.</p>
+                    <p className="text-sm text-sky-600 font-medium">Track total amount payable, paid amount, pending dues balance, and unpaid months.</p>
                   </div>
-                  <span className="text-xs font-bold text-rose-700 bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full">
+                  <span className="text-sm font-bold text-rose-700 bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full">
                     Total Dues: ₹{totalUnpaidDues.toLocaleString("en-IN")}
                   </span>
                 </div>
@@ -422,22 +422,22 @@ export default function AdminDashboard() {
                     <tbody className="divide-y divide-sky-100 font-medium">
                       {residentDuesSummary.map((res) => (
                         <tr key={res.flat} className="hover:bg-sky-50/50 transition-colors">
-                          <td className="p-3.5 font-extrabold text-sky-700">{res.flat}</td>
-                          <td className="p-3.5 font-bold text-sky-950">{res.owner}</td>
-                          <td className="p-3.5 font-black text-sky-950">₹{res.totalAmount.toLocaleString("en-IN")}</td>
-                          <td className="p-3.5 font-bold text-emerald-600">₹{res.paidTotal.toLocaleString("en-IN")}</td>
-                          <td className="p-3.5 font-bold text-rose-600">₹{res.unpaidTotal.toLocaleString("en-IN")}</td>
+                          <td className="text-sm p-3.5 font-extrabold text-sky-700">{res.flat}</td>
+                          <td className="text-sm p-3.5 font-bold text-sky-950">{res.owner}</td>
+                          <td className="text-sm p-3.5 font-black text-sky-950">₹{res.totalAmount.toLocaleString("en-IN")}</td>
+                          <td className="text-sm p-3.5 font-bold text-emerald-600">₹{res.paidTotal.toLocaleString("en-IN")}</td>
+                          <td className="text-sm p-3.5 font-bold text-rose-600">₹{res.unpaidTotal.toLocaleString("en-IN")}</td>
                           <td className="p-3.5">
                             {res.unpaidMonths.length > 0 ? (
                               <div className="flex flex-wrap gap-1">
                                 {res.unpaidMonths.map((m) => (
-                                  <span key={m} className="bg-rose-50 border border-rose-200 text-rose-700 text-[11px] font-bold px-2.5 py-0.5 rounded-md">
+                                  <span key={m} className="bg-rose-50 border border-rose-200 text-rose-700 text-[13px] font-bold px-2.5 py-0.5 rounded-md">
                                     {m}
                                   </span>
                                 ))}
                               </div>
                             ) : (
-                              <span className="text-emerald-700 font-bold text-xs bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-md inline-flex items-center gap-1">
+                              <span className="text-emerald-700 font-bold text-[13px] bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-md inline-flex items-center gap-1">
                               <span>All Clear</span>
                               </span>
                             )}
@@ -445,7 +445,7 @@ export default function AdminDashboard() {
                           <td className="p-3.5 text-right">
                             <button
                               onClick={() => setEditingFlat(res.flatRecord)}
-                              className="bg-sky-50 hover:bg-sky-100 text-sky-700 px-3 py-1 rounded-xl font-bold transition border border-sky-200 text-xs"
+                              className="bg-sky-50 hover:bg-sky-100 text-sky-700 px-3 py-1 rounded-xl font-bold transition border border-sky-200 text-[13px]"
                             >
                               Edit Dues
                             </button>
@@ -462,11 +462,11 @@ export default function AdminDashboard() {
                 <div className="flex justify-between items-center border-b border-sky-100 pb-4">
                   <div>
                     <h3 className="font-extrabold text-sky-950 text-base">Issued Invoices Log (Latest First)</h3>
-                    <p className="text-xs text-sky-600 font-medium">History of all generated maintenance statements</p>
+                    <p className="text-sm text-sky-600 font-medium">History of all generated maintenance statements</p>
                   </div>
                   <button
                     onClick={() => setShowBillModal(true)}
-                    className="text-xs bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-700 hover:to-teal-700 text-white px-3.5 py-2 rounded-2xl font-bold transition-all shadow-md shadow-sky-600/20 flex items-center space-x-1"
+                    className="text-sm bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-700 hover:to-teal-700 text-white px-3.5 py-2 rounded-2xl font-bold transition-all shadow-md shadow-sky-600/20 flex items-center space-x-1"
                   >
                     <span>+</span> <span>Generate New Bill</span>
                   </button>
@@ -488,13 +488,13 @@ export default function AdminDashboard() {
                     <tbody className="divide-y divide-sky-100">
                       {sortedBills.map((bill) => (
                         <tr key={bill.id} className="hover:bg-sky-50/50 transition-colors">
-                          <td className="p-3.5 font-mono font-bold text-sky-950">{bill.id}</td>
-                          <td className="p-3.5 font-bold text-sky-700">{bill.flat}</td>
-                          <td className="p-3.5 font-semibold text-sky-900">{bill.month}</td>
-                          <td className="p-3.5 font-black text-sky-950">₹{bill.amount.toLocaleString("en-IN")}</td>
-                          <td className="p-3.5 font-mono font-semibold text-sky-600">{bill.dueDate}</td>
+                          <td className="text-sm p-3.5 font-mono font-bold text-sky-950">{bill.id}</td>
+                          <td className="text-sm p-3.5 font-bold text-sky-700">{bill.flat}</td>
+                          <td className="text-sm p-3.5 font-semibold text-sky-900">{bill.month}</td>
+                          <td className="text-sm p-3.5 font-black text-sky-950">₹{bill.amount.toLocaleString("en-IN")}</td>
+                          <td className="text-sm p-3.5 font-mono font-semibold text-sky-600">{bill.dueDate}</td>
                           <td className="p-3.5">
-                            <span className={`px-3 py-1 rounded-full text-xs font-bold inline-block border ${
+                            <span className={`px-3 py-1 rounded-full text-[13px] font-bold inline-block border ${
                               bill.status === "Paid"
                                 ? "bg-emerald-50 border-emerald-200 text-emerald-700"
                                 : "bg-rose-50 border-rose-200 text-rose-700"
@@ -506,14 +506,14 @@ export default function AdminDashboard() {
                             {bill.status === "Paid" && (
                               <button
                                 onClick={() => setSelectedReceipt(bill)}
-                                className="bg-sky-50 hover:bg-sky-100 text-sky-800 px-3 py-1 rounded-xl font-bold transition border border-sky-200"
+                                className="text-[13px] bg-sky-50 hover:bg-sky-100 text-sky-800 px-3 py-1 rounded-xl font-bold transition border border-sky-200"
                               >
                                 📥 Receipt
                               </button>
                             )}
                             <button
                               onClick={() => setEditingBill(bill)}
-                              className="bg-sky-50 hover:bg-sky-100 text-sky-700 px-3 py-1 rounded-xl font-bold transition border border-sky-200"
+                              className="text-[13px] bg-sky-50 hover:bg-sky-100 text-sky-700 px-3 py-1 rounded-xl font-bold transition border border-sky-200"
                             >
                               Edit
                             </button>
@@ -521,7 +521,7 @@ export default function AdminDashboard() {
                               onClick={() => {
                                 if (globalThis.confirm(`Delete bill ${bill.id}?`)) deleteBill(bill.id);
                               }}
-                              className="bg-rose-50 hover:bg-rose-100 text-rose-600 px-3 py-1 rounded-xl font-bold transition border border-rose-200"
+                              className="text-[13px] bg-rose-50 hover:bg-rose-100 text-rose-600 px-3 py-1 rounded-xl font-bold transition border border-rose-200"
                             >
                               Delete
                             </button>
@@ -535,11 +535,11 @@ export default function AdminDashboard() {
             </div>
           )}
 
-          {/* ATE ACTIVITY LOG */}
+          {/* Gate Activity Section */}
           {(activeTab === "dashboard" || activeTab === "gate") && (
             <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-sky-100 space-y-6">
-              
-              {/* Activity Stream Header */}
+
+              {/* Activity Section Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sky-100 pb-5">
                 <div className="flex items-center space-x-3">
                   <span className="relative flex h-3.5 w-3.5">
@@ -548,16 +548,16 @@ export default function AdminDashboard() {
                   </span>
                   <div>
                     <h2 className="font-extrabold text-sky-950 text-base sm:text-lg tracking-tight">
-                      Live Gate Activity Console & Visitor Log
+                      Live Gate Activity Stream & Visitor Logs
                     </h2>
-                    <p className="text-xs text-sky-600 font-medium">
-                      Real-time gate check-ins, departure timestamps & edit history
+                    <p className="text-[15px] text-sky-600 font-medium">
+                      Real-time gate check-ins, departure times, and audit trail
                     </p>
                   </div>
                 </div>
 
-                <span className="self-start sm:self-center text-xs font-extrabold bg-emerald-50 text-emerald-700 px-4 py-1.5 rounded-full border border-emerald-200/80 shadow-xs">
-                  ● {visitors.filter((v) => v.status === "IN").length} Inside Premises
+                <span className="self-start sm:self-center text-sm font-extrabold bg-emerald-50 text-emerald-700 px-4 py-1.5 rounded-full border border-emerald-200/80 shadow-xs">
+                  ● {visitors.filter((v) => v.status === "IN").length} Active Visitors Inside
                 </span>
               </div>
 
@@ -566,8 +566,9 @@ export default function AdminDashboard() {
                 {visitors.map((visitor) => (
                   <div
                     key={visitor.id}
-                    className="bg-sky-50/40 hover:bg-white p-5 rounded-3xl border border-sky-100/90 hover:border-sky-300 hover:shadow-md transition-all duration-200 space-y-4">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-sky-100">                
+                    className="bg-sky-50/40 hover:bg-white p-5 rounded-3xl border border-sky-100/90 hover:border-sky-300 hover:shadow-md transition-all duration-200 space-y-4"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-sky-100">
                       <div className="flex items-center space-x-3.5">
                         <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-600 to-teal-500 text-white flex items-center justify-center font-black text-xl shrink-0 shadow-md shadow-sky-500/20">
                           {visitor.name.charAt(0)}
@@ -577,11 +578,10 @@ export default function AdminDashboard() {
                           <div className="flex items-center gap-2 flex-wrap">
                             <h3 className="font-extrabold text-base text-sky-950">{visitor.name}</h3>
                             <span
-                              className={`text-[11px] font-extrabold px-3 py-0.5 rounded-full border ${
-                                visitor.status === "IN"
+                              className={`text-[13px] font-extrabold px-3 py-0.5 rounded-full border ${visitor.status === "IN"
                                   ? "bg-emerald-50 text-emerald-700 border-emerald-200"
                                   : "bg-sky-100/70 text-sky-700 border-sky-200"
-                              }`}
+                                }`}
                             >
                               ● {visitor.status === "IN" ? "INSIDE PREMISES" : "DEPARTED"}
                             </span>
@@ -630,28 +630,23 @@ export default function AdminDashboard() {
                       </div>
                     </div>
 
-                    {/* Organized Grid of Visit Metadata */}
+                    {/* Metadata Grid */}
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                      
-                      {/* Target Unit */}
                       <div className="bg-white p-3 rounded-2xl border border-sky-100/80">
                         <span className="text-[13px] font-extrabold text-sky-400 uppercase tracking-wider block">Target Unit</span>
                         <span className="font-black text-sky-950 text-sm mt-0.5 block">{visitor.flat}</span>
                       </div>
 
-                      {/* Purpose */}
                       <div className="bg-white p-3 rounded-2xl border border-sky-100/80">
                         <span className="text-[13px] font-extrabold text-sky-400 uppercase tracking-wider block">Purpose</span>
-                        <span className="font-bold text-sky-900 truncate mt-0.5 block">{visitor.purpose}</span>
+                        <span className="text-[13px] font-bold text-sky-900 truncate mt-0.5 block">{visitor.purpose}</span>
                       </div>
 
-                      {/* Parking Slot */}
                       <div className="bg-white p-3 rounded-2xl border border-sky-100/80">
                         <span className="text-[13px] font-extrabold text-sky-400 uppercase tracking-wider block">Parking Slot</span>
-                        <span className="font-mono font-black text-teal-700 mt-0.5 block">{visitor.parkingSlot}</span>
+                        <span className="text-[15px] font-mono font-black text-teal-700 mt-0.5 block">{visitor.parkingSlot}</span>
                       </div>
 
-                      {/* Entry & Exit Timeline */}
                       <div className="bg-white p-3 rounded-2xl border border-sky-100/80">
                         <span className="text-[13px] font-extrabold text-sky-400 uppercase tracking-wider block">Timeline</span>
                         <div className="text-[13px] font-bold mt-0.5 flex flex-wrap gap-x-2">
@@ -659,24 +654,20 @@ export default function AdminDashboard() {
                           <span className="text-amber-700">Out: {visitor.checkOutTime || "Inside"}</span>
                         </div>
                       </div>
-
                     </div>
 
-                    {/* Audit Log Note */}
                     {visitor.lastUpdateLog && (
                       <div className="text-[13px] font-semibold text-amber-900 bg-amber-50/80 border border-amber-200/80 px-3.5 py-1.5 rounded-xl flex items-center justify-between">
                         <span>✏️ <strong>Log Note:</strong> {visitor.lastUpdateLog}</span>
-                        <span className="font-mono text-amber-700">{visitor.lastUpdated}</span>
+                        <span className="text-sm font-mono text-amber-700">{visitor.lastUpdated}</span>
                       </div>
                     )}
-
                   </div>
                 ))}
               </div>
 
             </div>
           )}
-
         </main>
       </div>
 
@@ -787,7 +778,7 @@ export default function AdminDashboard() {
         <div className="fixed inset-0 bg-sky-950/40 backdrop-blur-md flex items-center justify-center p-4 z-50 animate-fadeIn">
           <div className="bg-white p-6 sm:p-8 rounded-3xl max-w-md w-full shadow-2xl space-y-4 border border-sky-100">
             <div className="border-b border-sky-100 pb-3 flex justify-between items-center">
-              <h3 className="text-base font-extrabold text-sky-950">Add New Flat Record</h3>
+              <h3 className="text-sm text-base font-extrabold text-sky-950">Add New Flat Record</h3>
               <button
                 onClick={() => setShowAddFlatModal(false)}
                 className="text-sky-400 hover:text-sky-950 font-bold text-sm"
@@ -1130,7 +1121,7 @@ export default function AdminDashboard() {
                   onChange={(e: any) => setEditingVisitor({ ...editingVisitor, purpose: e.target.value })}
                   className="w-full bg-sky-50/50 border border-sky-200 p-3 rounded-2xl text-xs font-semibold text-sky-950 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
                 >
-                  <option value="Delivery (Zomato/Swiggy/Amazon)">Delivery (Zomato/Swiggy/Amazon)</option>
+                  <option value="Delivery (Zomato/Swiggy)">Delivery (Zomato/Swiggy)</option>
                   <option value="Guest / Relative">Guest / Relative</option>
                   <option value="Cab (Uber/Ola)">Cab (Uber/Ola)</option>
                   <option value="Maintenance / Electrician">Maintenance / Electrician</option>
